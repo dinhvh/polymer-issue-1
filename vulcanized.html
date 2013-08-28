@@ -1,0 +1,181 @@
+
+<!--
+Copyright 2013 The Polymer Authors. All rights reserved.
+Use of this source code is governed by a BSD-style
+license that can be found in the LICENSE file.
+-->
+<polymer-element name="polymer-ui-theme-aware" attributes="theme" assetpath="polymer-all/polymer-ui-elements/polymer-ui-theme-aware">
+  
+</polymer-element>
+
+<!--
+Copyright 2013 The Polymer Authors. All rights reserved.
+Use of this source code is governed by a BSD-style
+license that can be found in the LICENSE file.
+-->
+<!--
+/**
+ * @module Polymer Elements
+ */
+-->
+<polymer-element name="polymer-media-query" attributes="query queryMatches" assetpath="polymer-all/polymer-elements/polymer-media-query">
+  <template>
+    <style>
+      @host {
+        * {
+          display: none;
+        }
+      }
+    </style>
+  </template>
+  
+</polymer-element>
+
+<!--
+Copyright 2013 The Polymer Authors. All rights reserved.
+Use of this source code is governed by a BSD-style
+license that can be found in the LICENSE file.
+-->
+<polymer-element name="polymer-flex-layout" attributes="vertical align justify isContainer" assetpath="polymer-all/polymer-elements/polymer-flex-layout">
+  <template>
+    <link rel="stylesheet" polymer-scope="controller" href="polymer-all/polymer-elements/polymer-flex-layout/polymer-flex-layout.css">
+    <link rel="stylesheet" href="polymer-all/polymer-elements/polymer-flex-layout/polymer-flex-layout.css">
+    <content></content>
+  </template>
+  
+</polymer-element>
+
+<!--
+Copyright 2013 The Polymer Authors. All rights reserved.
+Use of this source code is governed by a BSD-style
+license that can be found in the LICENSE file.
+-->
+
+<!--
+/**
+ * @module Polymer UI Elements
+ */
+/**
+ * polymer-ui-toolbar is a horizontal bar containing elements that can perform actions.
+ *
+ * Example:
+ *
+ *     <polymer-ui-toolbar>
+ *       <polymer-ui-icon-button src="menu.png" on-click="menuAction"></polymer-ui-icon-button>
+ *       <div flex>Title</div>
+ *       <polymer-ui-icon-button src="more.png" on-click="moreAction"></polymer-ui-icon-button>
+ *     </polymer-ui-toolbar>
+ *
+ * polymer-ui-toolbar can adopt to smaller screen size.  If the attribute "responsive" is set
+ * and the screen size is less than the responsiveWidth (default to 800px), the toolbar will
+ * be moved to the bottom of the page.
+ *
+ * Example:
+ *
+ *     <polymer-ui-toolbar>
+ *       <polymer-ui-icon-button icon="menu"></polymer-ui-icon-button>
+ *       <div flex>Title</div>
+ *       <polymer-ui-toolbar responsive>
+ *         <polymer-ui-icon-button icon="add"></polymer-ui-icon-button>
+ *         <polymer-ui-icon-button icon="trash"></polymer-ui-icon-button>
+ *         <polymer-ui-icon-button icon="search"></polymer-ui-icon-button>
+ *       </polymer-ui-toolbar>
+ *     </polymer-ui-toolbar>
+ *
+ * @class polymer-ui-toolbar
+ */
+-->
+
+
+
+
+
+<polymer-element name="polymer-ui-toolbar" extends="polymer-ui-theme-aware" attributes="responsiveWidth" assetpath="polymer-all/polymer-ui-elements/polymer-ui-toolbar">
+  <template>
+    <link rel="stylesheet" href="polymer-all/polymer-ui-elements/polymer-ui-toolbar/polymer-ui-toolbar.css">
+    <polymer-flex-layout align="center"></polymer-flex-layout>
+    <polymer-media-query query="max-width: {{responsiveWidth}}" querymatches="{{queryMatches}}"></polymer-media-query>
+    <content></content>
+  </template>
+  
+</polymer-element>
+
+
+<!--
+Copyright 2013 The Polymer Authors. All rights reserved.
+Use of this source code is governed by a BSD-style
+license that can be found in the LICENSE file.
+-->
+<!--
+/**
+* Polymer-UI Elements
+*
+* @module Polymer-UI Elements
+*/  
+/**
+ * polymer-ui-icon is a 24x24 glyph expressed as a background-image.
+ *
+ * Example:
+ *
+ *     <polymer-ui-icon src="star.png"></polymer-ui-icon>
+ *
+ * Optionally can use other size like 32x32 by setting the attribute "size" to "32":
+ *
+ *     <polymer-ui-icon src="big_star.png" size="32"></polymer-ui-icon>
+ *
+ * Polymer includes an icon set.  The property "icon" can be used
+ * to specify which icon to use.
+ *
+ * Example:
+ *
+ *     <polymer-ui-icon icon="menu"></polymer-ui-icon>
+ *
+ * @class polymer-ui-icon
+ */
+-->
+
+
+<polymer-element name="polymer-ui-icon" extends="polymer-ui-theme-aware" attributes="src size index icon" assetpath="polymer-all/polymer-ui-elements/polymer-ui-icon">
+  <template>
+    <link rel="stylesheet" href="polymer-all/polymer-ui-elements/polymer-ui-icon/polymer-ui-icon.css">
+    <content></content>
+  </template>
+  
+</polymer-element>
+
+<!--
+Copyright 2013 The Polymer Authors. All rights reserved.
+Use of this source code is governed by a BSD-style
+license that can be found in the LICENSE file.
+-->
+<!--
+/**
+ * @module Polymer UI Elements
+ */
+/**
+ * polymer-ui-icon-button enables you to place an image centered in a button.
+ *
+ * Example:
+ *
+ *     <polymer-ui-icon-button src="star.png"></polymer-ui-icon-button>
+ *
+ * Polymer includes an icon set.  The property "icon" can be used
+ * to specify which icon to use.
+ *
+ * Example:
+ *
+ *     <polymer-ui-icon-button icon="menu"></polymer-ui-icon-button>
+ *
+ * @class polymer-ui-icon-button
+ */
+-->
+
+
+
+<polymer-element name="polymer-ui-icon-button" extends="polymer-ui-theme-aware" attributes="src index icon active" assetpath="polymer-all/polymer-ui-elements/polymer-ui-icon-button">
+  <template>
+    <link rel="stylesheet" href="polymer-all/polymer-ui-elements/polymer-ui-icon-button/polymer-ui-icon-button.css">
+    <polymer-ui-icon src="{{src}}" index="{{index}}" icon="{{icon}}"><content></content></polymer-ui-icon>
+  </template>
+  
+</polymer-element>
